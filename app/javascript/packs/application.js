@@ -8,6 +8,12 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
+import flatpickr from "flatpickr"
+
+document.addEventListener("turbolinks:load", () => {
+      $('[data-tooltip-display="true"]').tooltip(),
+      flatpickr("[id='flatpickr']", {})
+  })
 
 Rails.start()
 Turbolinks.start()

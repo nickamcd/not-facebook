@@ -14,8 +14,6 @@
  *= require_self
  */
 
- @import "bootstrap/scss/bootstrap";
-
  $primary: #4b553f;
  $secondary: #7e9079;
  $info: #737b87;
@@ -24,3 +22,6 @@
  $success: #4c944b;
  $warning: #c98413;
  $danger: #f44336;
+
+ @import "bootstrap/scss/bootstrap";
+ @import "flatpickr/dist/flatpickr.min.css";
