@@ -1,11 +1,7 @@
-<body class="bg-light">
-  <div class="container">
-    <h1 class="title col-md-auto">New Post</h1>
+<h1 class="title col-md-auto">New Post</h1>
 
-    <%= render 'form', post: @post %>
+<%= render 'form', post: @post %>
 
-    <div class="col-md-auto">
-      <%= link_to 'Back', posts_path %>
-    </div>
-  </div>
-</body>
+<div class="col-md-auto">
+  <%= link_to 'Back', posts_path %>
+</div>

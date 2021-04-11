@@ -1,67 +1,63 @@
-<body class="bg-light">
-  <div class="container">
-    <h2 class="title">Sign up</h2>
+<h2 class="title">Sign up</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="field form-group">
-            <%= f.label :first_name, "First Name:" %>
-            <%= f.text_field :first_name, class: "form-control"%>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="field form-group">
-            <%= f.label :last_name, "Last Name:" %>
-            <%= f.text_field :last_name, class: "form-control" %>
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :first_name, "First Name:" %>
+        <%= f.text_field :first_name, class: "form-control"%>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-8">
-          <%= f.label :birth_date, "Birth Date:" %>
-          <%= f.text_field :birth_date, class: "form-control bg-white", id: "flatpickr" %>
-        </div>
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :last_name, "Last Name:" %>
+        <%= f.text_field :last_name, class: "form-control" %>
       </div>
-
-      <div class="row">
-        <div class="col-md-8">
-          <div class="field form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="field form-group">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, class: "form-control",autocomplete: "new-password" %>
-            <% if @minimum_password_length %>
-              <em><%= @minimum_password_length %> characters minimum</em>
-              <br />
-            <% end %>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="field form-group">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up", class: "btn btn-secondary" %>
-      </div>
-    <% end %>
-    <br />
-    <%= render "devise/shared/links" %>
+    </div>
   </div>
-</body>
+
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.label :birth_date, "Birth Date:" %>
+      <%= f.text_field :birth_date, class: "form-control bg-white", id: "flatpickr" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="field form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, class: "form-control",autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <em><%= @minimum_password_length %> characters minimum</em>
+          <br />
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="field form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-secondary" %>
+  </div>
+<% end %>
+<br />
+<%= render "devise/shared/links" %>

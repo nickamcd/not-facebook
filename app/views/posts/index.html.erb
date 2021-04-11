@@ -1,27 +1,23 @@
-<body class="bg-light">
-  <div class="container">
-    <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-    <h1 class="title col-md-auto text-center">Posts</h1>
-      <% @posts.each do |post| %>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-lg-8">
-            <div class="card border-primary">
-              <div class="card-header bg-primary text-white">
-                <h4><%= post.user.first_name %> <%= post.user.last_name %></h4>
-              </div>
-              <div class="card-body bg-white">
-                <p><%= post.body %></p>
-              </div>
-            </div>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<h1 class="title col-md-auto text-center">Posts</h1>
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-lg-8">
+        <div class="card border-primary">
+          <div class="card-header bg-primary text-white">
+            <h4><%= post.user.first_name %> <%= post.user.last_name %></h4>
           </div>
-          <div class="col-md-2"></div>
+          <div class="card-body bg-white">
+            <p><%= post.body %></p>
+          </div>
         </div>
-      <% end %>
-    <br>
-    <%= link_to 'New Post', new_post_path, class: "btn btn-secondary" %>
-  </div>
-</body>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  <% end %>
+<br>
+<%= link_to 'New Post', new_post_path, class: "btn btn-secondary" %>
