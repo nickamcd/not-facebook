@@ -1,0 +1,11 @@
+<% if post.likes.any? %>
+  <p><%= post.likes.size %> likes</p>
+<% else %>
+  <p>0 likes</p>
+<% end %>
+
+<% if already_liked?(post)%>
+  <%= link_to "Remove Like", post_like_path(post, current_like(post).id), method: "delete" %>
+<% else %>
+  <%= link_to "Like", post_likes_path(post), method: "post" %>
+<% end %>
