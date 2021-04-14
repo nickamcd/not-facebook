@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
-    if comment.save
+    if @comment.save
       redirect_to posts_path
     else
       flash[:notice] = "Something went wrong."
