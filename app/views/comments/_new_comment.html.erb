@@ -1,0 +1,5 @@
+<%= form_with model: [post, post.comments.build], url: post_comments_path(post) do |f| %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <%= f.text_field :body, required: true, placeholder: "Your comment..." %><br />
+  <%= f.submit 'Post comment', class: "btn btn-secondary" %>
+<% end %> 

@@ -13,6 +13,10 @@
             <p><%= post.body %></p>
           </div>
           <div class="card-footer text-muted">
+            <% if post.comments.any? %>
+              <%= render 'comments/comments', { post: post } %>
+            <% end %>
+            <%= render 'comments/new_comment', { post: post } %>
             <%= render 'likes/likes', { post: post } %>
           </div>
         </div>
