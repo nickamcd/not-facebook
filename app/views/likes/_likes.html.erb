@@ -1,11 +1,17 @@
+<div class="container">
 <% if post.likes.any? %>
-  <p><%= post.likes.size %> likes</p>
+  <% if post.likes.size == 1 %>
+    <em><%= post.likes.size %> like</em>
+  <% else %>
+    <%= post.likes.size %> likes
+  <% end %>  
 <% else %>
-  <p>0 likes</p>
+  <em>0 likes</em>
 <% end %>
 
 <% if already_liked?(post)%>
-  <%= link_to "Remove Like", post_like_path(post, current_like(post).id), method: "delete" %>
+  <%= link_to "Remove Like", post_like_path(post, current_like(post).id), class: "btn btn-info", method: "delete" %>
 <% else %>
-  <%= link_to "Like", post_likes_path(post), method: "post" %>
+  <%= link_to "Like", post_likes_path(post), class: "btn btn-info", method: "post" %>
 <% end %>
+</div>
