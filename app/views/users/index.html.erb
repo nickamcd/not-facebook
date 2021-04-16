@@ -1,0 +1,8 @@
+<% @users.each do |u| %>
+  <% full_name = "#{u.first_name} #{u.last_name}" %>
+  <div class="container border-top border-dark">
+    <%= link_to user_path(u) do %>
+      <strong><%= full_name %></strong>
+    <% end %>
+  </div>
+<% end %>
