@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get 'users/sign_out', to: 'devise/sessions#destroy'
+  
   resources :users, only: [:index, :show] do
     resources :friendships, only: [:create, :destroy]
   end
@@ -9,5 +11,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  root to: "posts#index" 
+  root to: 'posts#index'
 end
