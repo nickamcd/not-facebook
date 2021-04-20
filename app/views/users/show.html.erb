@@ -1,6 +1,11 @@
 <h1 class="title">
   <%= @user.first_name %> <%= @user.last_name %>
 </h1>
-<div class="conatiner">
+<div class="container">
   <em>Birth Day: <%= @user.birth_date %></em>
+</div>
+<div class="container">
+  <%= link_to user_friendships_path(@user), method: :post do %>
+    <button class="btn btn-secondary">Send Friend Request</button>
+  <% end %>
 </div>
