@@ -18,6 +18,28 @@ class FriendshipsController < ApplicationController
     redirect_to root_path
   end
 
+  def accept
+    @friendship = Friendship.find_by(sender_id: params[:user_id], receiver_id: current_user.id, status: false)
+
+    @friendship.status = true
+    if @friendship.save
+      flash[:success] = 'Friend Request Accepted!'
+      @inverse_friendship = current_user.request_sent.build(receiver_id: params[:user_id], status: true)
+      @inverse_friendship.save
+    else
+      flash[:danger] = 'Something went wrong...'
+    end
+    redirect_to root_path
+  end
+
+  def deny
+    @friendship = Friendships.find_by(sender_id: params[:user_id], receiver_id: current_user.id, status: false)
+    
+    @friendship.destroy
+    flash[:success] = 'Friend Request Declined!'
+    redirect_to root_path
+  end
+
   def destroy
   end
 end
