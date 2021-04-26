@@ -24,3 +24,12 @@
     <% end %>
   </div>
 <% end %>
+
+<% unless @friends.empty? %>
+  <h3>friends</h3>
+  <% @friends.each do |f| %>
+    <%= link_to user_path(f) do %>
+      <em><%= f.full_name %> </em>
+    <% end %>
+  <% end %>
+<% end %>
