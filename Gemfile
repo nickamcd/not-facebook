@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use devise for user authentication and account management
 gem 'devise', '~> 4.7', '>= 4.7.3'
+# Use font-awesome for icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

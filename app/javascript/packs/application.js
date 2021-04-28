@@ -10,6 +10,8 @@ import "channels"
 import "bootstrap"
 import flatpickr from "flatpickr"
 
+require('notifications/notifications.js.coffee')
+
 document.addEventListener("turbolinks:load", () => {
       $('[data-tooltip-display="true"]').tooltip(),
       flatpickr("[id='flatpickr']", {})

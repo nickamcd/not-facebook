@@ -19,6 +19,20 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      <% if user_signed_in? %>
+        <li class="nav-item btn-group" data-behavior="notifications">
+          <a class="dropdown-toggle nav-link" type="button" data-behavior="notifications-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= fa_icon "bell" %> <span data-behavior="unread-count"></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
+            <!--
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            -->
+          </div>
+        </li>
+      <% end %>
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>

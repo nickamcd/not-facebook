@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
+    @post = Post.find(params[:post_id])
     if @comment.save
+
+      Notification.create(recipient: @post.user, actor: current_user, action: "posted", notifiable: @post)
+
       redirect_to posts_path
     else
       flash[:notice] = "Something went wrong."
