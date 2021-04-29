@@ -12,6 +12,7 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.request_sent.build(receiver_id: params[:user_id])
     if @friendship.save
       flash[:success] = 'Request sent.'
+      Notification.create(recipient: @user, actor: current_user, action: "would like", notifiable: @friendship)
     else
       flash[:danger] = 'Request failed to send.'
     end

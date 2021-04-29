@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     if @comment.save
 
-      Notification.create(recipient: @post.user, actor: current_user, action: "posted", notifiable: @post)
+      Notification.create(recipient: @post.user, actor: current_user, action: "commented", notifiable: @post)
 
       redirect_to posts_path
     else

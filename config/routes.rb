@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'users/sign_out', to: 'devise/sessions#destroy'
+  get 'friendships/', to: 'users#index', as: 'friendship'
   
   resources :users, only: [:index, :show] do
     resources :friendships, only: [:create, :destroy] do
