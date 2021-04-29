@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 # Use font-awesome for icons
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+# Use gravatar_image_tag for profile photos
+gem 'gravatar_image_tag', '~> 1.2'
+# Use image_processing for resizing of images
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
