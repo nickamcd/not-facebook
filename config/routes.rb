@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users , controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'users/sign_out', to: 'devise/sessions#destroy'
   get 'friendships/', to: 'users#index', as: 'friendship'
