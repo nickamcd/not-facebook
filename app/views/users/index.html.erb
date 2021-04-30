@@ -1,9 +1,9 @@
-<h2>people</h2>
+<h2>People</h2>
 
-<% @users.each do |u| %>
+<% (@possible_friends).each do |u| %>
   <div class="container border-top border-dark">
     <%= link_to user_path(u) do %>
-      <strong><%= u.full_name %></strong>
+      <%= image_tag user_avatar(u, 30), class: "rounded-circle" %> <strong><%= u.full_name %></strong>
     <% end %>
   </div>
 <% end %>
