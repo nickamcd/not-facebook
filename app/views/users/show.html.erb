@@ -1,11 +1,25 @@
+<div class="container">
+  <%= image_tag user_avatar(@user, 125), class: "rounded-circle" %>
+</div>
 <h1 class="title">
   <%= @user.first_name %> <%= @user.last_name %>
 </h1>
 <div class="container">
   <em>Birth Day: <%= @user.birth_date %></em>
 </div>
-<div class="container">
+<% if @user.id == current_user.id %>
+  <div class="container">
+  <%= link_to edit_user_registration_path, method: :get do %>
+    <button class="btn btn-secondary">Edit Profile</button>
+  <% end %>
+</div>
+<% else %>
+  <div class="container">
   <%= link_to user_friendships_path(@user), method: :post do %>
     <button class="btn btn-secondary">Send Friend Request</button>
   <% end %>
+</div>
+<% end %>
+<div class="container">
+  <%= render 'posts/post_feed' %>
 </div>

@@ -1,0 +1,25 @@
+<% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-lg-8">
+        <div class="card border-primary">
+          <div class="card-header bg-primary text-white">
+            <h4><%= post.user.first_name %> <%= post.user.last_name %></h4>
+          </div>
+          <div class="card-body bg-white">
+            <p><%= post.body %></p>
+          </div>
+          <div class="card-footer text-muted">
+            <%= render 'likes/likes', { post: post } %><br />
+            <% if post.comments.any? %>
+              <%= render 'comments/comments', { comments: post.comments } %>
+            <% end %>
+            <%= render 'comments/new_comment', { post: post } %>
+          </div>
+        </div>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  <% end %>
